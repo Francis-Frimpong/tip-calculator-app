@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background-color: hsl(185, 41%, 84%);
     display: flex;
@@ -21,7 +26,6 @@ body{
     display: flex;
     flex-direction: column;
     width: 400px;
-    border: 1px solid black;
 }
 
 .display-results{
@@ -29,5 +33,36 @@ body{
     max-width: 700px;
     box-sizing: border-box;
     height: 100px;
+}
+
+.inputBtns-forms{
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(2, auto); 
+    gap: .7rem;
+}
+
+.inputBtns-forms > div{
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* hides content that overflows */
+    white-space: nowrap; /* prevents text from wrapping */
+    text-overflow: ellipsis;
+    border-radius: 5px;
+}
+
+.fieldInput{
+    width: 90px;
+    max-width: 100px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background-color: hsl(185, 41%, 84%);
+    text-align: center;
+
 }
 
