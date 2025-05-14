@@ -10,6 +10,10 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 5em;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    color: hsl(183, 100%, 15%);
 }
 
 .container{
@@ -22,10 +26,12 @@ body{
     gap: 1rem;
 }
 
+
+
 .data-entry{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 290px;
 }
 
 .display-results{
@@ -35,11 +41,16 @@ body{
     height: 100px;
 }
 
+.selectTip{
+    margin-top: 2em;
+}
+
 .inputBtns-forms{
     display: grid;
     grid-template-columns: repeat(3, 90px);
     grid-template-rows: repeat(2, auto); 
     gap: .7rem;
+    margin-top: 1em;
 }
 
 .inputBtns-forms > div{
@@ -48,10 +59,11 @@ body{
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
-    overflow: hidden; /* hides content that overflows */
-    white-space: nowrap; /* prevents text from wrapping */
+    overflow: hidden; 
+    white-space: nowrap; 
     text-overflow: ellipsis;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .fieldInput{
@@ -61,8 +73,33 @@ body{
     box-sizing: border-box;
     border: none;
     outline: none;
-    background-color: hsl(185, 41%, 84%);
+    background-color: hsl(189, 47%, 97%);
     text-align: center;
-
+    font-weight: 700;
+    font-family: "Space Mono", monospace;
+    color: hsl(183, 100%, 15%);
 }
+
+#bill{
+    padding: 1em 0;
+    background-color: hsl(189, 47%, 97%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: .4em;
+}
+#people{
+    padding: 1em 0;
+    background-color: hsl(189, 47%, 97%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: .4em;
+}
+
+.people-label{
+    margin-top: 2em;
+}
+
+
 
