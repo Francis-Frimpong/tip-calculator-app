@@ -17,6 +17,7 @@ body{
 }
 
 .container{
+    margin-top: 4em;
     background-color: white;
     padding: 2em;
     width: 700px;
@@ -38,7 +39,9 @@ body{
     background-color: hsl(183, 100%, 15%);
     max-width: 700px;
     box-sizing: border-box;
-    height: 100px;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
 }
 
 .selectTip{
@@ -154,5 +157,61 @@ body{
     pointer-events: none; 
 }
 
+
+.tip-amount{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}  
+
+.tip-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tip-txt h6{
+    color: hsl(172, 67%, 45%);
+}
+
+.tip-amount h2{
+    font-size: 2.3rem;
+    margin: 0 auto;
+    color: hsl(172, 67%, 45%);
+}
+
+.tip-output{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2.2em;
+}  
+
+.total-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total-txt h6{
+    color: hsl(172, 67%, 45%);
+}
+
+.tip-output h2{
+    font-size: 2.3rem;
+    margin: 0 auto;
+    color: hsl(172, 67%, 45%);
+}
+
+.reset-btn{
+    width: 100%;
+    padding: .8em 0;
+    font-weight: 700;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 7.5em;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(183, 87%, 22%);
+
+}
 
 
