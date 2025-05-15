@@ -17,8 +17,11 @@
 <img src="images/logo.svg" alt="logo">
  <section class="container">
   <div class="data-entry">
-    <label for="bill" class="bill-label">Bill</label>
-    <input type="text" id="bill">
+    <div class="bill-wrapper">
+      <img src="images/icon-dollar.svg" class="bill-icon"/>
+      <label for="bill" class="bill-label">Bill</label>
+      <input type="text" id="bill" placeholder="0">
+    </div>
 
     <div class="selectTip">
       <h3>Select Tip %</h3>
@@ -31,8 +34,11 @@
         <input type="text" placeholder="Custom" class="fieldInput">
       </div>
     </div>
-    <label for="people" class="people-label">Number of People</label>
-    <input type="text" id="people">
+    <div class="people-wrapper">
+      <img src="images/icon-person.svg" alt="" class="people-icon">
+      <label for="people" class="people-label">Number of People</label>
+      <input type="text" id="people" placeholder="0">
+    </div>
   </div>
   <div class="display-results">
 

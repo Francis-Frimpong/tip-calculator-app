@@ -74,10 +74,17 @@ body{
     border: none;
     outline: none;
     background-color: hsl(189, 47%, 97%);
-    text-align: center;
     font-weight: 700;
     font-family: "Space Mono", monospace;
     color: hsl(183, 100%, 15%);
+    direction: rtl;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.fieldInput::placeholder{
+    text-align: center;  /* aligns placeholder to the left */
+    /* direction:; */
 }
 
 #bill{
@@ -87,7 +94,18 @@ body{
     outline: none;
     border-radius: 5px;
     margin-top: .4em;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+    font-family: "Space Mono", monospace;
+    
 }
+
+
+
+
 #people{
     padding: 1em 0;
     background-color: hsl(189, 47%, 97%);
@@ -95,10 +113,45 @@ body{
     outline: none;
     border-radius: 5px;
     margin-top: .4em;
+    text-align: right;
+    direction: rtl; 
+    text-align: right; 
+    padding-right: 10px; 
+    box-sizing: border-box;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+    font-family: "Space Mono", monospace;
 }
 
 .people-label{
     margin-top: 2em;
+}
+
+.bill-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-icon{
+    position: absolute;
+    left: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+.people-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.people-icon{
+    position: absolute;
+    left: 10px;
+    top: 80%;
+    transform: translateY(-50%);
+    pointer-events: none; 
 }
 
 
