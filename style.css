@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+input{
+    box-sizing: border-box;
+}
 body{
     background-color: hsl(185, 41%, 84%);
     display: flex;
@@ -26,8 +30,6 @@ body{
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
-
-
 
 .data-entry{
     display: flex;
@@ -90,7 +92,7 @@ body{
     /* direction:; */
 }
 
-#bill{
+.bill{
     padding: 1em 0;
     background-color: hsl(189, 47%, 97%);
     border: none;
@@ -109,7 +111,7 @@ body{
 
 
 
-#people{
+.people{
     padding: 1em 0;
     background-color: hsl(189, 47%, 97%);
     border: none;
@@ -212,6 +214,23 @@ body{
     color: hsl(183, 100%, 15%);
     background-color: hsl(183, 87%, 22%);
 
+}
+
+/* computed styles */
+.focusedInput{
+    outline: 2px solid hsl(172, 67%, 45%);
+}
+
+.inputError{
+    outline: 2px solid rgb(255, 49, 49);
+}
+
+.errorText{
+    color: rgb(255, 49, 49);
+}
+
+.activeButton{
+    background-color: hsl(185, 41%, 84%);
 }
 
 
