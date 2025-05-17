@@ -3,6 +3,7 @@ const inputBtn = document.querySelectorAll('.btns')
 const btnFormsCon = document.querySelector('.inputBtns-forms')
 
 const customField = document.querySelectorAll('input');
+const fieldInput = document.querySelector('fieldInput');
 
 
 
