@@ -58,7 +58,7 @@ body{
     margin-top: 1em;
 }
 
-.inputBtns-forms > div{
+.inputBtns-forms > .btns{
     background-color: hsl(183, 100%, 15%);
     color: white;
     padding: 10px;
@@ -215,6 +215,12 @@ body{
     background-color: hsl(183, 87%, 22%);
 
 }
+.btns:hover{
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+
+
+}
 
 /* computed styles */
 .focusedInput{
@@ -229,8 +235,15 @@ body{
     color: rgb(255, 49, 49);
 }
 
-.activeButton{
+.btns.activeButton{
     background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+
+}
+
+.btns.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
 }
 
 

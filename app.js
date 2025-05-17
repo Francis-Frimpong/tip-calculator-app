@@ -28,9 +28,11 @@ btnFormsCon.addEventListener('click', (e) => {
     if (e.target.classList.contains('btns') ){
         inputBtn.forEach((button, index) => {
             if(e.target === button){
-                let linkNum = tipPecentage[index]
+                let linkNum = tipPecentage[index];
+                button.classList.add('activeButton')
                 console.log(linkNum);
             }
+            button.classList.add('disabled')
             
         });
     
