@@ -222,6 +222,14 @@ body{
 
 }
 
+.error-msg{
+    font-size: .65rem;
+    position: absolute;
+    right: 0;
+    bottom: 55px;
+    display: none;
+}
+
 /* computed styles */
 .focusedInput{
     outline: 2px solid hsl(172, 67%, 45%);
@@ -233,6 +241,7 @@ body{
 
 .errorText{
     color: rgb(255, 49, 49);
+    display: block;
 }
 
 .btns.activeButton{

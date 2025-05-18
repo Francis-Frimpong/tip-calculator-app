@@ -4,6 +4,7 @@ const btnFormsCon = document.querySelector('.inputBtns-forms')
 
 const customField = document.querySelectorAll('input');
 const fieldInput = document.querySelector('fieldInput');
+const peopleField = document.querySelector('.people');
 
 
 
@@ -17,6 +18,21 @@ customField.forEach((field) => {
         field.classList.remove('focusedInput');
 
     })
+})
+
+
+peopleField.addEventListener('input', () => {
+
+    if(Number(peopleField.value) < 1){
+        document.querySelector('.error-msg').classList.add('errorText')
+        peopleField.classList.add('inputError');
+    } else{
+        document.querySelector('.error-msg').classList.remove('errorText');
+        peopleField.classList.remove('inputError');
+    
+    }
+
+
 })
 
 
