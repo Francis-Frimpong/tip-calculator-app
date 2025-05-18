@@ -59,7 +59,8 @@ btnFormsCon.addEventListener('click', (e) => {
 
     //convert tip percentage to decimal
     let calcPercent = tipPercent / 100;
-    Number(billField) * calcPercent;
+    console.log(calcPercent);
+    let multiplyByBill = Number(billField) * calcPercent;
     console.log(calcPercent);
 
     //add total(bill) with tip
