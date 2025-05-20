@@ -218,8 +218,10 @@ body{
 .btns:hover{
     background-color: hsl(185, 41%, 84%);
     color: hsl(183, 100%, 15%);
-
-
+}
+.reset-btn:hover{
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
 }
 
 .error-msg{

@@ -18,6 +18,38 @@ const customField = document.querySelectorAll('input')
 
 
 
+billInput.addEventListener('input', () => {
+    billAmount = billInput.value
+    calculateTip();
+})
+
+
+
+const tipPecentage = [5,10,15,25,50]
+btnFormsCon.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btns') ){
+        tipButtons.forEach((button, index) => {
+            if(e.target === button){
+                tipPercent = tipPecentage[index];
+                button.classList.add('activeButton')
+                console.log(tipPercent);
+            }
+            button.classList.add('disabled')
+            
+        });
+    
+    }
+    calculateTip();
+})
+
+customTipInput.addEventListener('input', () => {
+    tipButtons.forEach((button) => {
+        button.classList.add('disabled')
+    })
+    tipPercent = customTipInput.value;
+    calculateTip()
+})
+
 
 
 customField.forEach((field) => {
@@ -34,12 +66,14 @@ customField.forEach((field) => {
 
 peopleInput.addEventListener('input', () => {
 
-    if(Number(peopleInput.value) < 1){
-        document.querySelector('.error-msg').classList.add('errorText')
+    if(peopleInput.value < 1){
+        errorMessage.classList.add('errorText')
         peopleInput.classList.add('inputError');
     } else{
-        document.querySelector('.error-msg').classList.remove('errorText');
+        errorMessage.classList.remove('errorText');
         peopleInput.classList.remove('inputError');
+        numberOfPeople = peopleInput.value;
+        calculateTip();
     
     }
 
@@ -47,39 +81,37 @@ peopleInput.addEventListener('input', () => {
 })
 
 
+resetButton.addEventListener('click', () => {
+     tipButtons.forEach((button) => {
+        button.classList.remove('disabled');
+        button.classList.remove('activeButton');
+    })
 
-const tipPecentage = [5,10,15,25,50]
-btnFormsCon.addEventListener('click', (e) => {
-    if (e.target.classList.contains('btns') ){
-        inputBtn.forEach((button, index) => {
-            if(e.target === button){
-                tipPercent = tipPecentage[index];
-                button.classList.add('activeButton')
-                console.log(tipPercent);
-            }
-            button.classList.add('disabled')
-            
-        });
-    
-    }
-
-    //convert tip percentage to decimal
-//     let calcPercent = tipPercent / 100;
-//     console.log(calcPercent);
-//     let multiplyByBill = Number(billField) * calcPercent;
-//     console.log(calcPercent);
-
-//     //add total(bill) with tip
-//     let addBill = Number(billField.value) + calcPercent;
-//     console.log(addBill);
-
-let perPerson = (Number(billField.value) * (1 + tipPercent / 100)) / Number(peopleField.value) 
-
-console.log(perPerson);
-
+    billInput.value = " ";
+    peopleInput.value = " ";
+    customTipInput.value = " ";
+    tipPercent = 0;
+    billAmount = 0;
+    numberOfPeople = 1;
+    tipAmountDisplay.textContent = "$0.00";
+    totalAmountDisplay.textContent = "$0.00";
 })
 
 
-//Tip calculation
-// Per person = (Bill × (1 + Tip %)) ÷ Number of people
+function calculateTip(){
+    if(billAmount > 0 && tipPercent > 0 && numberOfPeople > 0){
+        let tipAmount = (billAmount * tipPercent / 100) / numberOfPeople;
+        let totalAmount = (billAmount / numberOfPeople) + tipAmount;
+
+        tipAmountDisplay.textContent =  `$${tipAmount.toFixed(2)}`;
+        totalAmountDisplay.textContent = `$${totalAmount.toFixed(2)}`;
+    }else {
+        tipAmountDisplay.textContent = "$0.00";
+        totalAmountDisplay.textContent = "$0.00";
+    }
+}
+
+
+
+    
 
