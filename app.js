@@ -1,8 +1,9 @@
+//initial global variable
 let billAmount = 0;
 let tipPercent = 0;
 let numberOfPeople = 1;
 
-
+//select and store dom element
 const billInput = document.querySelector('.bill');
 const tipButtons = document.querySelectorAll('.btns')
 const customTipInput = document.querySelector('.fieldInput');
@@ -17,14 +18,14 @@ const btnFormsCon = document.querySelector('.inputBtns-forms')
 const customField = document.querySelectorAll('input')
 
 
-
+//bill input
 billInput.addEventListener('input', () => {
     billAmount = billInput.value
     calculateTip();
 })
 
 
-
+//linking button click to tip percentage array
 const tipPecentage = [5,10,15,25,50]
 btnFormsCon.addEventListener('click', (e) => {
     if (e.target.classList.contains('btns') ){
@@ -42,6 +43,7 @@ btnFormsCon.addEventListener('click', (e) => {
     calculateTip();
 })
 
+//custom tip input 
 customTipInput.addEventListener('input', () => {
     tipButtons.forEach((button) => {
         button.classList.add('disabled')
@@ -51,7 +53,7 @@ customTipInput.addEventListener('input', () => {
 })
 
 
-
+//adding focus and blur function to custom field
 customField.forEach((field) => {
     field.addEventListener('focus', () => {
         field.classList.add('focusedInput');
@@ -63,7 +65,7 @@ customField.forEach((field) => {
     })
 })
 
-
+//people input
 peopleInput.addEventListener('input', () => {
 
     if(peopleInput.value < 1){
@@ -80,7 +82,7 @@ peopleInput.addEventListener('input', () => {
 
 })
 
-
+//Reset button
 resetButton.addEventListener('click', () => {
      tipButtons.forEach((button) => {
         button.classList.remove('disabled');
@@ -98,6 +100,7 @@ resetButton.addEventListener('click', () => {
 })
 
 
+//Calculate tip function
 function calculateTip(){
     if(billAmount > 0 && tipPercent > 0 && numberOfPeople > 0){
         let tipAmount = (billAmount * tipPercent / 100) / numberOfPeople;
