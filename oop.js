@@ -56,6 +56,16 @@ class TipCalculator {
       });
     });
   }
+  numberOfPeopleInput() {
+    if (this.peopleInput.value < 1) {
+      this.errorMessage.classList.add("errorText");
+      this.peopleInput.classList.add("inputError");
+      this.numberOfPeople = this.peopleInput.value;
+      this.calculateTip();
+    }
+  }
+
+  resetbutton() {}
 
   calculateTip() {
     if (this.billAmount > 0 && this.tipPercent > 0 && this.numberOfPeople > 0) {
@@ -77,6 +87,10 @@ class TipCalculator {
       this.buttonLinkToTipPercentageArr(e)
     );
     this.customTipInput.addEventListener("input", () => this.customtipInput());
+
+    this.peopleInput.addEventListener("input", () =>
+      this.numberOfPeopleInput()
+    );
   }
 }
 
