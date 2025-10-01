@@ -21,7 +21,7 @@ class TipCalculator {
 
   // bill input method
   billinput() {
-    this.billAmount = this.billInput;
+    this.billAmount = this.billInput.value;
     this.calculateTip();
   }
 
@@ -60,6 +60,9 @@ class TipCalculator {
     if (this.peopleInput.value < 1) {
       this.errorMessage.classList.add("errorText");
       this.peopleInput.classList.add("inputError");
+    } else {
+      this.errorMessage.classList.remove("errorText");
+      this.peopleInput.classList.remove("inputError");
       this.numberOfPeople = this.peopleInput.value;
       this.calculateTip();
     }
@@ -76,8 +79,8 @@ class TipCalculator {
     this.tipPercent = 0;
     this.billAmount = 0;
     this.numberOfPeople = 1;
-    this.tipAmountDisplay.textContent = "0.00";
-    this.totalAmountDisplay.textContent = "0.00";
+    this.tipAmountDisplay.textContent = "$0.00";
+    this.totalAmountDisplay.textContent = "$0.00";
   }
 
   calculateTip() {
@@ -104,6 +107,7 @@ class TipCalculator {
     this.peopleInput.addEventListener("input", () =>
       this.numberOfPeopleInput()
     );
+    this.resetButton.addEventListener("click", () => this.resetbutton());
   }
 }
 
