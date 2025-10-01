@@ -46,6 +46,17 @@ class TipCalculator {
     this.calculateTip();
   }
 
+  customfieldFocusAndBlur() {
+    this.customField.forEach((field) => {
+      field.addEventListener("focus", () => {
+        field.classList.add("focusedInput");
+      });
+      field.addEventListener("blur", () => {
+        field.classList.remove("focusedInput");
+      });
+    });
+  }
+
   calculateTip() {
     if (this.billAmount > 0 && this.tipPercent > 0 && this.numberOfPeople > 0) {
       let tipAmount =
@@ -68,3 +79,7 @@ class TipCalculator {
     this.customTipInput.addEventListener("input", () => this.customtipInput());
   }
 }
+
+const tipCalculator = new TipCalculator();
+tipCalculator.customfieldFocusAndBlur();
+tipCalculator.addEventListeners();
