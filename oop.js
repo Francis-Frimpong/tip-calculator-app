@@ -65,7 +65,20 @@ class TipCalculator {
     }
   }
 
-  resetbutton() {}
+  resetbutton() {
+    this.tipButtons.forEach((button) => {
+      button.classList.remove("disabled");
+      button.classList.remove("activeButton");
+    });
+    this.billInput.value = "";
+    this.peopleInput.value = "";
+    this.customTipInput.value = "";
+    this.tipPercent = 0;
+    this.billAmount = 0;
+    this.numberOfPeople = 1;
+    this.tipAmountDisplay.textContent = "0.00";
+    this.totalAmountDisplay.textContent = "0.00";
+  }
 
   calculateTip() {
     if (this.billAmount > 0 && this.tipPercent > 0 && this.numberOfPeople > 0) {
